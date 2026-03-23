@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tixora/screen/auth_screen.dart';
+import 'package:tixora/screen/discover_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -99,7 +101,7 @@ class SplashScreen extends StatelessWidget {
                   )
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(height: 80,),
               Text(
                 '@2026 TixoraX Group. Designed For Efficient Event Booking',
                 style: TextStyle(
@@ -111,21 +113,32 @@ class SplashScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Color(0xFF9E88B4),
-                        child: Icon(Icons.location_pin, color: Theme.of(context).primaryColor,),
-                      ),
-                      Text(
-                        'DISCOVER',
-                        style: TextStyle(
-                          color: Theme.of(context).splashColor,
-                          fontSize: 13,
-                          letterSpacing: 1
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (context) => DiscoverScreen()
+                        )
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xFF9E88B4),
+                          child: Icon(Icons.location_pin, color: Theme.of(context).primaryColor,),
                         ),
-                      )
-                    ],
+                        SizedBox(height: 5,),
+                        Text(
+                          'DISCOVER',
+                          style: TextStyle(
+                            color: Theme.of(context).splashColor,
+                            fontSize: 13,
+                            letterSpacing: 1
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   Column(
                     children: [
@@ -133,6 +146,7 @@ class SplashScreen extends StatelessWidget {
                         backgroundColor: Color(0xFF9E88B4),
                         child: Icon(Icons.event_note, color: Theme.of(context).primaryColor,),
                       ),
+                      SizedBox(height: 5,),
                       Text(
                         'TICKETS',
                         style: TextStyle(
@@ -143,21 +157,30 @@ class SplashScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Color(0xFF9E88B4),
-                        child: Icon(Icons.person, color: Color(0xFF3A284E),),
-                      ),
-                      Text(
-                        'ACCOUNT',
-                        style: TextStyle(
-                          color: Theme.of(context).splashColor,
-                          fontSize: 13,
-                          letterSpacing: 1
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context, 
+                        MaterialPageRoute(builder: (context) => AuthScreen())
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xFF9E88B4),
+                          child: Icon(Icons.person, color: Color(0xFF3A284E),),
                         ),
-                      )
-                    ],
+                        SizedBox(height: 5,),
+                        Text(
+                          'ACCOUNT',
+                          style: TextStyle(
+                            color: Theme.of(context).splashColor,
+                            fontSize: 13,
+                            letterSpacing: 1
+                          ),
+                        )
+                      ],
+                    ),
                   )
                 ],
               )
