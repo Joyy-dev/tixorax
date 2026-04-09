@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tixora/screen/splash_screen.dart';
+import 'package:tixora/screen/onboarding_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF241338),
         splashColor: Color(0xFFD5BDED),
       ),
-      home: SplashScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }
