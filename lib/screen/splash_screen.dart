@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tixora/screen/auth_screen.dart';
+import 'package:tixora/screen/authentication_screen.dart';
 import 'package:tixora/screen/discover_screen.dart';
 import 'package:tixora/screen/onboarding_screen.dart';
 
@@ -10,195 +10,197 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFF6A567F),
-                      blurRadius: 30,
-                      spreadRadius: 2,
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(100)
-                ),
-                child: Icon(
-                  Icons.wifi,
-                  color: Theme.of(context).splashColor,
-                  size: 100,
-                ),
-              ),
-              SizedBox(height: 30,),
-              ShaderMask(
-                blendMode: BlendMode.srcIn,                
-                shaderCallback: (bounds) => LinearGradient(
-                  colors: [
-                    Theme.of(context).splashColor,
-                    Color(0xFF3A284E),
-                    Color(0xFFB39CFF),
-                    Color(0xFF00C0AE)
-                  ]
-                ).createShader(Rect.fromCenter(center: Offset(90, 90), width: bounds.width, height: bounds.height)),
-                child: Text(
-                  'TixoraX',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic,
-                    fontSize: 60
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xFF6A567F),
+                        blurRadius: 30,
+                        spreadRadius: 2,
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(100)
+                  ),
+                  child: Icon(
+                    Icons.wifi,
+                    color: Theme.of(context).splashColor,
+                    size: 100,
                   ),
                 ),
-              ),
-              ShaderMask(
-                blendMode: BlendMode.srcIn,
-                shaderCallback: (bounds) => LinearGradient(
-                  colors: [
-                    Theme.of(context).splashColor,
-                    Color(0xFFB39CFF)
-                  ]
-                ).createShader(Rect.fromCenter(center: Offset(90, 90), width: bounds.width, height: bounds.height)),
-                child: Text(
-                  'LIVE MUSIC 🎶 CURATED BEATS 🪘 URBAN RYTHM 💕',
+                SizedBox(height: 30,),
+                ShaderMask(
+                  blendMode: BlendMode.srcIn,                
+                  shaderCallback: (bounds) => LinearGradient(
+                    colors: [
+                      Theme.of(context).splashColor,
+                      Color(0xFF3A284E),
+                      Color(0xFFB39CFF),
+                      Color(0xFF00C0AE)
+                    ]
+                  ).createShader(Rect.fromCenter(center: Offset(90, 90), width: bounds.width, height: bounds.height)),
+                  child: Text(
+                    'TixoraX',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 60
+                    ),
+                  ),
+                ),
+                ShaderMask(
+                  blendMode: BlendMode.srcIn,
+                  shaderCallback: (bounds) => LinearGradient(
+                    colors: [
+                      Theme.of(context).splashColor,
+                      Color(0xFFB39CFF)
+                    ]
+                  ).createShader(Rect.fromCenter(center: Offset(90, 90), width: bounds.width, height: bounds.height)),
+                  child: Text(
+                    'LIVE MUSIC 🎶 CURATED BEATS 🪘 URBAN RYTHM 💕',
+                    style: TextStyle(
+                      fontSize: 15,
+                      letterSpacing: 5
+                    ),textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 40,),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      end: Alignment.centerRight,
+                      colors: [
+                        Color(0xFF8155FF),
+                        Color(0xFFCDBDFF)
+                      ]
+                    ),
+                    borderRadius: BorderRadius.circular(40)
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context, 
+                        MaterialPageRoute(builder: (context) => OnboardingScreen())
+                      );
+                    }, 
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      foregroundColor: Theme.of(context).primaryColor,
+                      minimumSize: Size(double.infinity, 60),
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold
+                      )
+                    ),
+                    child: Text(
+                      'Experience the Vibe'
+                    )
+                  ),
+                ),
+                SizedBox(height: 80,),
+                Text(
+                  '@2026 TixoraX Group. Designed For Efficient Event Booking',
                   style: TextStyle(
-                    fontSize: 15,
-                    letterSpacing: 5
+                    color: Theme.of(context).splashColor,
+                    fontSize: 13
                   ),textAlign: TextAlign.center,
                 ),
-              ),
-              SizedBox(height: 40,),
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    end: Alignment.centerRight,
-                    colors: [
-                      Color(0xFF8155FF),
-                      Color(0xFFCDBDFF)
-                    ]
-                  ),
-                  borderRadius: BorderRadius.circular(40)
-                ),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context, 
-                      MaterialPageRoute(builder: (context) => OnboardingScreen())
-                    );
-                  }, 
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    foregroundColor: Theme.of(context).primaryColor,
-                    minimumSize: Size(double.infinity, 60),
-                    textStyle: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (context) => DiscoverScreen()
+                          )
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xFF9E88B4),
+                            child: Icon(Icons.location_pin, color: Theme.of(context).primaryColor,),
+                          ),
+                          SizedBox(height: 5,),
+                          Text(
+                            'DISCOVER',
+                            style: TextStyle(
+                              color: Theme.of(context).splashColor,
+                              fontSize: 13,
+                              letterSpacing: 1
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context, 
+                          MaterialPageRoute(builder: (context) => AuthenticationScreen())
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xFF9E88B4),
+                            child: Icon(Icons.event_note, color: Theme.of(context).primaryColor,),
+                          ),
+                          SizedBox(height: 5,),
+                          Text(
+                            'TICKETS',
+                            style: TextStyle(
+                              color: Theme.of(context).splashColor,
+                              fontSize: 13,
+                              letterSpacing: 1
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context, 
+                          MaterialPageRoute(builder: (context) => AuthenticationScreen())
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Color(0xFF9E88B4),
+                            child: Icon(Icons.person, color: Color(0xFF3A284E),),
+                          ),
+                          SizedBox(height: 5,),
+                          Text(
+                            'ACCOUNT',
+                            style: TextStyle(
+                              color: Theme.of(context).splashColor,
+                              fontSize: 13,
+                              letterSpacing: 1
+                            ),
+                          )
+                        ],
+                      ),
                     )
-                  ),
-                  child: Text(
-                    'Experience the Vibe'
-                  )
-                ),
-              ),
-              SizedBox(height: 80,),
-              Text(
-                '@2026 TixoraX Group. Designed For Efficient Event Booking',
-                style: TextStyle(
-                  color: Theme.of(context).splashColor,
-                  fontSize: 13
-                ),textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (context) => DiscoverScreen()
-                        )
-                      );
-                    },
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xFF9E88B4),
-                          child: Icon(Icons.location_pin, color: Theme.of(context).primaryColor,),
-                        ),
-                        SizedBox(height: 5,),
-                        Text(
-                          'DISCOVER',
-                          style: TextStyle(
-                            color: Theme.of(context).splashColor,
-                            fontSize: 13,
-                            letterSpacing: 1
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context, 
-                        MaterialPageRoute(builder: (context) => AuthScreen())
-                      );
-                    },
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xFF9E88B4),
-                          child: Icon(Icons.event_note, color: Theme.of(context).primaryColor,),
-                        ),
-                        SizedBox(height: 5,),
-                        Text(
-                          'TICKETS',
-                          style: TextStyle(
-                            color: Theme.of(context).splashColor,
-                            fontSize: 13,
-                            letterSpacing: 1
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context, 
-                        MaterialPageRoute(builder: (context) => AuthScreen())
-                      );
-                    },
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xFF9E88B4),
-                          child: Icon(Icons.person, color: Color(0xFF3A284E),),
-                        ),
-                        SizedBox(height: 5,),
-                        Text(
-                          'ACCOUNT',
-                          style: TextStyle(
-                            color: Theme.of(context).splashColor,
-                            fontSize: 13,
-                            letterSpacing: 1
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )
-            ],
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

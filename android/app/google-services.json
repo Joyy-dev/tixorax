@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1070521280397",
+    "project_id": "tixora-416b1",
+    "storage_bucket": "tixora-416b1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070521280397:android:1b75eba4c5feaa86f53fc4",
+        "android_client_info": {
+          "package_name": "com.example.tixora"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqARLYeOpqZiZpjYGKqPU2uS9SX2eBmFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

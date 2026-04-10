@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tixora/screen/auth_screen.dart';
+import 'package:tixora/screen/authentication_screen.dart';
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
@@ -33,7 +33,7 @@ class DiscoverScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pushReplacement(
                 context, 
-                MaterialPageRoute(builder: (context) => AuthScreen())
+                MaterialPageRoute(builder: (context) => AuthenticationScreen())
               );
             }, 
             child: Text(

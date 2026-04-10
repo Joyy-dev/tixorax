@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:tixora/screen/auth_screen.dart';
+import 'package:tixora/screen/authentication_screen.dart';
 import 'package:tixora/screen/discover_screen.dart';
 import 'package:tixora/widget/attendees_card.dart';
 import 'package:tixora/widget/booking_alert_card.dart';
@@ -97,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       onPressed: () {
                         Navigator.pushReplacement(
                           context, 
-                          MaterialPageRoute(builder: (_) => const AuthScreen())
+                          MaterialPageRoute(builder: (_) => const AuthenticationScreen())
                         );
                       },
                       child: const Text(
