@@ -50,15 +50,16 @@ class DiscoverScreen extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
+          color: Color(0xFF070417),
           image: DecorationImage(
             image: AssetImage('assets/images/concert.jpg'),
             fit: BoxFit.cover,
-            opacity: 0.7
+            opacity: 0.6
           ),
         ),
         child: Container(
           padding: EdgeInsets.only(left: 15, right: 15, bottom: 60),
-          color: Color.fromARGB(148, 36, 19, 56),
+          color: Color.fromARGB(204, 36, 19, 56),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,

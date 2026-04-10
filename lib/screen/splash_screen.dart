@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tixora/screen/auth_screen.dart';
 import 'package:tixora/screen/discover_screen.dart';
+import 'package:tixora/screen/onboarding_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -85,7 +86,12 @@ class SplashScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40)
                 ),
                 child: ElevatedButton(
-                  onPressed: () {}, 
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => OnboardingScreen())
+                    );
+                  }, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,
@@ -140,22 +146,30 @@ class SplashScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Color(0xFF9E88B4),
-                        child: Icon(Icons.event_note, color: Theme.of(context).primaryColor,),
-                      ),
-                      SizedBox(height: 5,),
-                      Text(
-                        'TICKETS',
-                        style: TextStyle(
-                          color: Theme.of(context).splashColor,
-                          fontSize: 13,
-                          letterSpacing: 1
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context, 
+                        MaterialPageRoute(builder: (context) => AuthScreen())
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Color(0xFF9E88B4),
+                          child: Icon(Icons.event_note, color: Theme.of(context).primaryColor,),
                         ),
-                      )
-                    ],
+                        SizedBox(height: 5,),
+                        Text(
+                          'TICKETS',
+                          style: TextStyle(
+                            color: Theme.of(context).splashColor,
+                            fontSize: 13,
+                            letterSpacing: 1
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   GestureDetector(
                     onTap: () {
