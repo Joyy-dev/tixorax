@@ -8,13 +8,13 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF241338),
+        backgroundColor: Color(0xFF0D061E),
         elevation: 10,
         title: ShaderMask(
           blendMode: BlendMode.srcIn,
           shaderCallback: (bounds) => LinearGradient(
             colors: [
-              Color(0xFF370096),
+              Color(0xFF0D061E),
               Color(0xFF9A7BFF),
               Color(0xFFB39CFF)
             ]
@@ -50,7 +50,7 @@ class DiscoverScreen extends StatelessWidget {
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFF070417),
+          color: Color(0xFF0D061E),
           image: DecorationImage(
             image: AssetImage('assets/images/concert.jpg'),
             fit: BoxFit.cover,

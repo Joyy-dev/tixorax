@@ -316,7 +316,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           TextButton(
                             onPressed: _toggleAuthMode, 
                             child: Text(
-                              _isLogin ? 'Join the pulse' : 'Sign In',
+                              _isLogin ? 'Join the Tixora' : 'Sign In',
                               style: TextStyle(
                                 color: Color(0xFF4EE2D1)
                               ),

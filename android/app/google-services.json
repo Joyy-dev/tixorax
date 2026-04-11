@@ -12,7 +12,12 @@
           "package_name": "com.example.tixora"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1070521280397-the5j33o7k3nvdgapkburtm6h8befik0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBqARLYeOpqZiZpjYGKqPU2uS9SX2eBmFs"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070521280397-the5j33o7k3nvdgapkburtm6h8befik0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1070521280397-jcubn1jkqdprlos08m9hahcl3tdjoslu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tixora"
+              }
+            }
+          ]
         }
       }
     }
