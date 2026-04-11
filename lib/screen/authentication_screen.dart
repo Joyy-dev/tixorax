@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tixora/screen/discover_events_screen.dart';
+//import 'package:tixora/screen/discover_events_screen.dart';
 import 'package:tixora/services/auth.dart';
 import 'package:tixora/widget/auth_app_bar.dart';
 import 'package:tixora/widget/auth_header.dart';
+import 'package:tixora/widget/event_bottom_navigation.dart';
 import 'package:tixora/widget/social_button.dart';
 
 class AuthenticationScreen extends StatefulWidget {
@@ -64,7 +65,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         if (mounted) {
           Navigator.pushReplacement(
             context, 
-            MaterialPageRoute(builder: (_) => DiscoverEventsScreen())
+            MaterialPageRoute(builder: (_) => EventBottomNavigation())
           );
         }
       } catch (e) {

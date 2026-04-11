@@ -6,24 +6,22 @@ class EventBottomNavigation extends StatefulWidget {
   const EventBottomNavigation({super.key});
 
   @override
-  State<EventBottomNavigation> createState() => _CustomBottomNavBarState();
+  State<EventBottomNavigation> createState() => _EventBottomNavigation();
 }
 
-class _CustomBottomNavBarState extends State<EventBottomNavigation> {
+class _EventBottomNavigation extends State<EventBottomNavigation> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = const [
+  final List<Widget> _screens = [
     DiscoverEventsScreen(),
+    TicketScreen(),
+    TicketScreen(),
     TicketScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _screens,
-      ),
       bottomNavigationBar: Theme(
         data: ThemeData(
           splashColor: Colors.transparent,
@@ -102,6 +100,10 @@ class _CustomBottomNavBarState extends State<EventBottomNavigation> {
             ],
           ),
         ),
+      ),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _screens,
       ),
     );
   }

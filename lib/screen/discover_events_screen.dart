@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tixora/provider/events.dart';
-import 'package:tixora/widget/event_bottom_navigation.dart';
 import 'package:tixora/widget/event_card.dart';
 import 'package:tixora/widget/event_search.dart';
 import 'package:tixora/widget/featured_event_card.dart';
@@ -41,8 +40,13 @@ class _DiscoverEventsScreenState extends State<DiscoverEventsScreen> {
           )
         ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      bottomNavigationBar: EventBottomNavigation(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: const Color(0xFF9070E0),
+        elevation: 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        child: const Icon(Icons.map, color: Colors.white),
+      ),
 
 
       body: SingleChildScrollView(
@@ -146,14 +150,7 @@ class _DiscoverEventsScreenState extends State<DiscoverEventsScreen> {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color(0xFF9070E0),
-        elevation: 8,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        child: const Icon(Icons.map, color: Colors.white),
-      ),
+      )
     );
   }
 }
