@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tixora/widget/main_ticket_file.dart';
 import 'package:tixora/widget/memory_card.dart';
+import 'package:tixora/widget/upcoming_list_item.dart';
 
 class TicketScreen extends StatefulWidget {
   const TicketScreen({super.key});
@@ -58,9 +59,9 @@ class _TicketScreenState extends State<TicketScreen> {
                 style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 16),
-              _buildUpcomingListItem('Electric Dreams Festival', 'Nov 12 • 19:00 PM'),
+              UpcomingListItem('Electric Dreams Festival', 'Nov 12 • 19:00 PM'),
               const SizedBox(height: 12),
-              _buildUpcomingListItem('Synthesizer Symphony', 'Dec 05 • 20:30 PM'),
+              UpcomingListItem('Synthesizer Symphony', 'Dec 05 • 20:30 PM'),
               const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,50 +89,6 @@ class _TicketScreenState extends State<TicketScreen> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-
-  Widget _buildUpcomingListItem(String title, String dateText) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: const Color(0xFF160D26),
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 56,
-            height: 56,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              image: const DecorationImage(
-                image: AssetImage('assets/images/rave.png'),
-                fit: BoxFit.cover,
-              )
-            ),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 6),
-                Row(
-                  children: [
-                    const Icon(Icons.calendar_today, size: 12, color: Color(0xFF4EE2D1)),
-                    const SizedBox(width: 6),
-                    Text(dateText, style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                  ],
-                )
-              ],
-            )
-          ),
-          const Icon(Icons.chevron_right, color: Colors.white38)
-        ],
       ),
     );
   }

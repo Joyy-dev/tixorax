@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tixora/screen/create_screen.dart';
 import 'package:tixora/screen/discover_events_screen.dart';
 import 'package:tixora/screen/ticket_screen.dart';
 
@@ -15,7 +16,7 @@ class _EventBottomNavigation extends State<EventBottomNavigation> {
   final List<Widget> _screens = [
     DiscoverEventsScreen(),
     TicketScreen(),
-    TicketScreen(),
+    CreateScreen(),
     TicketScreen(),
   ];
 
