@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tixora/screen/single_event_screen.dart';
 
 class EventCard extends StatelessWidget {
   final Map<String, dynamic> event;
@@ -32,12 +33,20 @@ class EventCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  event['title'],
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (_) => SingleEventScreen())
+                    );
+                  },
+                  child: Text(
+                    event['title'],
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 4),

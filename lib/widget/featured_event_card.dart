@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tixora/screen/single_event_screen.dart';
 
 class FeaturedEventCard extends StatelessWidget {
   const FeaturedEventCard({super.key});
@@ -57,12 +58,20 @@ class FeaturedEventCard extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Electric Aurora 2024',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(builder: (_) => SingleEventScreen())
+                    );
+                  },
+                  child: const Text(
+                    'Electric Aurora 2024',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 6),
