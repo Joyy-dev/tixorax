@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class EventProvider extends ChangeNotifier {
+class EventController extends GetxController {
   final List<Map<String, dynamic>> _upcomingEvents = [
     {
       'title': 'Secret Garden Jazz',

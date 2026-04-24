@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import 'package:tixora/provider/events.dart';
 import 'package:tixora/widget/event_card.dart';
 import 'package:tixora/widget/event_search.dart';
@@ -19,8 +19,8 @@ class _DiscoverEventsScreenState extends State<DiscoverEventsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final eventProvider = Provider.of<EventProvider>(context);
-    final upcomingEvents = eventProvider.upcomingEvents;
+    final eventController = Get.put(EventController());
+    final upcomingEvents = eventController.upcomingEvents;
 
     return Scaffold(
       backgroundColor: const Color(0xFF0D061E),

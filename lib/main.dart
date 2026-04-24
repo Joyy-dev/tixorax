@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import 'package:tixora/firebase_options.dart';
-import 'package:tixora/provider/events.dart';
 import 'package:tixora/screen/splash_screen.dart';
 
 void main() async {
@@ -11,12 +10,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform
   );
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => EventProvider()),
-      ],
-      child: const MyApp(),
-    ),
+    const MyApp(),
   );
 }
 
@@ -25,15 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) {
-            EventProvider();
-          },
-        )
-      ],
-      child: MaterialApp(
+    return GetMaterialApp(
         title: 'TixoraX',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -59,7 +45,6 @@ class MyApp extends StatelessWidget {
           )
         ),
         home: const SplashScreen(),
-      ),
     );
   }
 }
